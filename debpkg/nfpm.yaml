@@ -1,0 +1,46 @@
+name: "vgkeydesk-snap-access"
+arch: "all"
+platform: "linux"
+version: ${PACKAGE_VERSION}
+section: "default"
+priority: "optional"
+release: ${PACKAGE_RELEASE}
+
+provides:
+- vgkeydesk-stats-access
+
+maintainer: "Ingmund Ollson <ingmund@proton.me>"
+description: VPNGen keydesk snap access grants
+vendor: "VPNGen"
+homepage: "http://vpngen.org"
+
+contents:
+- dst: /home/_onotole_/.ssh
+  type: dir
+  file_info:
+    mode: 0700
+    owner: _onotole_
+    group: _onotole_
+- src: authorized_keys
+  dst: /home/_onotole_/.ssh/authorized_keys
+  file_info:
+    mode: 0400
+    owner: _onotole_
+    group: _onotole_
+- src: /data/src/keydesk_snap_access_sudoers
+  dst: /etc/sudoers.d/_onotole_
+  file_info:
+    mode: 0400
+    owner: root
+    group: root
+overrides:
+  deb:
+    scripts:
+      preinstall: /data/src/preinstall.sh
+      postremove: /data/src/postremove.sh
+deb:
+  compression: xz
+  breaks:
+  - vgkeydesk-all (<< 1.0.0)
+  - vgkeydesk (<< 1.0.0) 
+
