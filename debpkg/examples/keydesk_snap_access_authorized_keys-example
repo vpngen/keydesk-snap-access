@@ -1,0 +1,2 @@
+command="/opt/vgkeydesk-snap/ssh_commands.sh ${SSH_ORIGINAL_COMMAND}",no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIME/KEXVpTdz3gdPQrzFsjc7a1CzYsCSFQ4oWop1tgoS snap01
+command="/opt/vgkeydesk-snap/ssh_commands.sh ${SSH_ORIGINAL_COMMAND}",no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIVnjt21OSSeXYxcvxQKLl7bbvzuwdGQ3MzDo+9pgr/H snap02
